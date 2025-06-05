@@ -14,13 +14,16 @@ class ProductosGen(ListaGen[P], ABC, Generic[P]):
         pass
     
     def agruparPorPrecio(self, precio: float) -> List[P]:
-        return [elemento for elemento in self._elementos 
-                if hasattr(elemento, 'get_precio') and elemento.get_precio() <= precio]
+        """Return elements with a price lower or equal to ``precio``."""
+        return [elemento for elemento in self._elementos
+                if getattr(elemento, 'precio', None) is not None and elemento.precio <= precio]
     
     def agruparPorMarca(self, marca: str) -> List[P]:
-        return [elemento for elemento in self._elementos 
-                if hasattr(elemento, 'get_marca') and elemento.get_marca().lower() == marca.lower()]
+        """Return elements matching the provided brand."""
+        return [elemento for elemento in self._elementos
+                if getattr(elemento, 'marca', '').lower() == marca.lower()]
     
     def buscarPorTipo(self, tipo: str) -> List[P]:
-        return [elemento for elemento in self._elementos 
-                if hasattr(elemento, 'get_tipo') and elemento.get_tipo().lower() == tipo.lower()]
+        """Return elements matching the provided type."""
+        return [elemento for elemento in self._elementos
+                if getattr(elemento, 'tipo', '').lower() == tipo.lower()]
