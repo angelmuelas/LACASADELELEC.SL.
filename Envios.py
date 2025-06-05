@@ -8,7 +8,7 @@ class Envios(PedidosGen[Envio]):
         super().__init__()
     
     def mostrarElemento(self, elemento: Envio) -> str:
-        return f"ID: {elemento.get_id()}, Pedido: {elemento.get_pedido()}, Estado: {elemento.get_estado()}, Transportista: {elemento.get_transportista()}"
+        return str(elemento)
     
     def agruparPorTransportista(self, transportista: str) -> List[Envio]:
         return [elemento for elemento in self._elementos 

@@ -50,3 +50,9 @@ class Telefono:
     
     def set_sistemaOperativo(self, sistemaOperativo: str):
         self._sistemaOperativo = sistemaOperativo
+
+    def __repr__(self) -> str:
+        return (
+            f"Telefono(ID={self._id}, Tipo='{self._tipo}', Marca='{self._marca}', "
+            f"Precio={self._precio}€, Pulgadas={self._pulgadas}\", SO='{self._sistemaOperativo}')"
+        )

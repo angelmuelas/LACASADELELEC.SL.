@@ -8,7 +8,7 @@ class Electrodomesticos(ProductosGen[Electrodomestico]):
         super().__init__()
     
     def mostrarElemento(self, elemento: Electrodomestico) -> str:
-        return f"ID: {elemento.get_id()}, Tipo: {elemento.get_tipo()}, Marca: {elemento.get_marca()}, Precio: {elemento.get_precio()}€, Etiqueta: {elemento.get_etiquetaDeConsumo()}"
+        return str(elemento)
     
     def agruparPorEtiquetaConsumo(self, etiquetaConsumo: str) -> List[Electrodomestico]:
         return [elemento for elemento in self._elementos 

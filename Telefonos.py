@@ -8,7 +8,7 @@ class Telefonos(ProductosGen[Telefono]):
         super().__init__()
     
     def mostrarElemento(self, elemento: Telefono) -> str:
-        return f"ID: {elemento.get_id()}, Tipo: {elemento.get_tipo()}, Marca: {elemento.get_marca()}, Precio: {elemento.get_precio()}€, Pulgadas: {elemento.get_pulgadas()}\", SO: {elemento.get_sistemaOperativo()}"
+        return str(elemento)
     
     def agruparPorSistemaOperativo(self, sistemaOperativo: str) -> List[Telefono]:
         return [elemento for elemento in self._elementos 

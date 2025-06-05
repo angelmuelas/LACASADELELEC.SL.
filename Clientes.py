@@ -8,7 +8,7 @@ class Clientes(UsuariosGen[Cliente]):
         super().__init__()
     
     def mostrarElemento(self, elemento: Cliente) -> str:
-        return f"ID: {elemento.get_id()}, Nombre: {elemento.get_nombre()}, Email: {elemento.get_email()}, Categoria: {elemento.get_categoria()}"
+        return str(elemento)
     
     def agruparPorCategoria(self, categoria: str) -> List[Cliente]:
         return [elemento for elemento in self._elementos 

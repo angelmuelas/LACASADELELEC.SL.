@@ -43,3 +43,9 @@ class Electrodomestico:
     
     def set_etiquetaDeConsumo(self, etiquetaDeConsumo: str):
         self._etiquetaDeConsumo = etiquetaDeConsumo
+
+    def __repr__(self) -> str:
+        return (
+            f"Electrodomestico(ID={self._id}, Tipo='{self._tipo}', Marca='{self._marca}', "
+            f"Precio={self._precio}€, Etiqueta='{self._etiquetaDeConsumo}')"
+        )

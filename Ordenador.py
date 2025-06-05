@@ -57,3 +57,9 @@ class Ordenador:
     
     def set_memoriaRam(self, memoriaRam: int):
         self._memoriaRam = memoriaRam
+
+    def __repr__(self) -> str:
+        return (
+            f"Ordenador(ID={self._id}, Tipo='{self._tipo}', Marca='{self._marca}', "
+            f"Precio={self._precio}€, Procesador='{self._procesador}', RAM={self._memoriaRam}GB)"
+        )

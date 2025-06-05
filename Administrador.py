@@ -29,3 +29,7 @@ class Administrador:
     
     def set_contrasena(self, contrasena: str):
         self._contrasena = contrasena
+
+    def __repr__(self) -> str:
+        return (f"Administrador(ID={self._id}, Nombre='{self._nombre}', "
+                f"Email='{self._email}')")

@@ -58,3 +58,9 @@ class Envio:
     
     def set_volumen(self, volumen: float):
         self._volumen = volumen
+
+    def __repr__(self) -> str:
+        return (
+            f"Envio(ID={self._id}, Pedido='{self._pedido}', Estado='{self._estado}', "
+            f"Transportista='{self._transportista}')"
+        )

@@ -8,7 +8,7 @@ class Carritos(PedidosGen[Carrito]):
         super().__init__()
     
     def mostrarElemento(self, elemento: Carrito) -> str:
-        return f"ID: {elemento.get_id()}, Productos: {elemento.get_productoTotal()}, Precio Total: {elemento.get_precioTotal()}€, Estado: {elemento.get_estado()}"
+        return str(elemento)
     
     def agruparPorDescuentoTotal(self, descuento: float) -> List[Carrito]:
         return [elemento for elemento in self._elementos 

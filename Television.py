@@ -50,3 +50,9 @@ class Television:
     
     def set_pulgadas(self, pulgadas: float):
         self._pulgadas = pulgadas
+
+    def __repr__(self) -> str:
+        return (
+            f"Television(ID={self._id}, Tipo='{self._tipo}', Marca='{self._marca}', "
+            f"Precio={self._precio}€, Pulgadas={self._pulgadas}\", Conectividad='{self._conectividad}')"
+        )

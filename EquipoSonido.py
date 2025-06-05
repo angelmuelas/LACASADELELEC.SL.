@@ -43,3 +43,9 @@ class EquipoSonido:
     
     def set_potencia(self, potencia: int):
         self._potencia = potencia
+
+    def __repr__(self) -> str:
+        return (
+            f"EquipoSonido(ID={self._id}, Tipo='{self._tipo}', Marca='{self._marca}', "
+            f"Precio={self._precio}€, Potencia={self._potencia}W)"
+        )

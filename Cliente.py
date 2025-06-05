@@ -87,3 +87,9 @@ class Cliente:
     
     def set_historial(self, historial: str):
         self._historial = historial
+
+    def __repr__(self) -> str:
+        return (
+            f"Cliente(ID={self._id}, Nombre='{self._nombre}', Email='{self._email}', "
+            f"Categoria='{self._categoria}')"
+        )

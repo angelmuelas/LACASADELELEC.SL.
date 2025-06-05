@@ -51,3 +51,9 @@ class Carrito:
     
     def set_precioFinal(self, precioFinal: float):
         self._precioFinal = precioFinal
+
+    def __repr__(self) -> str:
+        return (
+            f"Carrito(ID={self._id}, Productos={self._productoTotal}, "
+            f"PrecioTotal={self._precioTotal}€, Estado='{self._estado}')"
+        )

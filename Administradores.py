@@ -7,4 +7,4 @@ class Administradores(UsuariosGen[Administrador]):
         super().__init__()
     
     def mostrarElemento(self, elemento: Administrador) -> str:
-        return f"ID: {elemento.get_id()}, Nombre: {elemento.get_nombre()}, Email: {elemento.get_email()}"
+        return str(elemento)
