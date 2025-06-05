@@ -14,5 +14,6 @@ class PedidosGen(ListaGen[D], ABC, Generic[D]):
         pass
     
     def agruparPorEstado(self, estado: str) -> List[D]:
-        return [elemento for elemento in self._elementos 
-                if hasattr(elemento, 'get_estado') and elemento.get_estado().lower() == estado.lower()]
+        """Return elements with the requested state."""
+        return [elemento for elemento in self._elementos
+                if getattr(elemento, 'estado', '').lower() == estado.lower()]

@@ -9,21 +9,17 @@ class ListaGen(ABC, Generic[T]):
         self._elementos: List[T] = []
     
     def agregar(self, elemento: T) -> bool:
-        try:
-            self._elementos.append(elemento)
-            return True
-        except:
-            return False
+        """Add an element to the internal list."""
+        self._elementos.append(elemento)
+        return True
     
     def eliminar(self, id: int) -> bool:
-        try:
-            for i, elemento in enumerate(self._elementos):
-                if hasattr(elemento, 'get_id') and elemento.get_id() == id:
-                    del self._elementos[i]
-                    return True
-            return False
-        except:
-            return False
+        """Remove an element by its id if present."""
+        for i, elemento in enumerate(self._elementos):
+            if hasattr(elemento, 'get_id') and elemento.get_id() == id:
+                del self._elementos[i]
+                return True
+        return False
     
     def buscar(self, id: int) -> Optional[T]:
         for elemento in self._elementos:
